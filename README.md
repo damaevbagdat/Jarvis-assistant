@@ -34,6 +34,8 @@
 
 - **[QUICK_START.md](QUICK_START.md)** - Быстрый запуск за 10 минут
 - **[SETUP_CHECKLIST.md](SETUP_CHECKLIST.md)** - Полный чек-лист настройки
+- **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Диагностика и исправление проблем
+- **[TEST_RESULTS.md](TEST_RESULTS.md)** - Результаты тестирования
 - **[workflows/README.md](workflows/README.md)** - Документация n8n workflow
 - **[WORK_LOG.md](WORK_LOG.md)** - История разработки
 - **[.credentials/TOKENS.md](.credentials/TOKENS.md)** - API ключи (не в git)
@@ -112,11 +114,26 @@ n8n Workflow
 
 ## 📊 Статус проекта
 
-✅ **Workflow создан и задокументирован**
-⚠️ **Требуется проверка credentials**
-🔄 **В процессе тестирования**
+**Текущая готовность:** 60% ✅
 
-**Прогресс:** Смотрите [WORK_LOG.md](WORK_LOG.md)
+### ✅ Что работает:
+- Базовая текстовая коммуникация
+- Идентичность бота как "Джарвис"
+- Google Gemini API (основная LLM)
+- Supabase векторная база знаний (RAG)
+- Веб-поиск через Google Custom Search
+- n8n Workflow активен и стабилен
+
+### ❌ Известные проблемы:
+- **Память разговоров** - не работает (PostgreSQL credentials)
+- **Анализ изображений** - не работает (OpenRouter API)
+- **ConvertAPI** - невалидный ключ для Word документов
+
+### 🔧 Исправление проблем:
+📖 Смотрите подробное руководство: **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)**
+
+**Полные результаты тестирования:** [TEST_RESULTS.md](TEST_RESULTS.md)
+**История разработки:** [WORK_LOG.md](WORK_LOG.md)
 
 ## Автор
 
