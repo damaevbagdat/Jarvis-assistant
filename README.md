@@ -1,53 +1,122 @@
 # Jarvis Assistant Bot
 
-Telegram бот-ассистент с интеграцией n8n для автоматизации задач.
+Продвинутый AI-ассистент в Telegram с мультимодальными возможностями и RAG (Retrieval-Augmented Generation).
 
 ## Описание
 
-**Baga_assistant_bot** (@Baga_assistant_bot) - умный Telegram бот, использующий n8n для обработки и автоматизации различных задач.
+**Джарвис** (@Baga_assistant_bot) - высокоинтеллектуальный персональный AI-ассистент, способный обрабатывать текст, голос, изображения и документы. Использует n8n для оркестрации и векторную базу знаний для точных ответов.
 
-## Статус проекта
+## ✨ Возможности
 
-🚧 **В разработке** - проект находится на стадии восстановления и доработки
+### 📥 Обработка входящих данных
+- 💬 **Текстовые сообщения** - естественное общение
+- 🎤 **Голосовые сообщения** - распознавание через Whisper API
+- 🖼️ **Изображения** - анализ через GPT-4o-mini
+- 📄 **Документы** - PDF, Word, Excel, JSON, XML
 
-## Технологии
+### 🧠 AI возможности
+- **RAG** - векторная база знаний через Supabase
+- **Память разговоров** - контекст через PostgreSQL
+- **Веб-поиск** - актуальная информация через Google
+- **Semantic Search** - улучшенная релевантность с Cohere
+
+## 🚀 Быстрый старт
+
+**Минимальная настройка (~10 минут):**
+
+Следуйте инструкциям в [QUICK_START.md](QUICK_START.md)
+
+**Полная настройка (~30 минут):**
+
+Подробный чек-лист в [SETUP_CHECKLIST.md](SETUP_CHECKLIST.md)
+
+## 📚 Документация
+
+- **[QUICK_START.md](QUICK_START.md)** - Быстрый запуск за 10 минут
+- **[SETUP_CHECKLIST.md](SETUP_CHECKLIST.md)** - Полный чек-лист настройки
+- **[workflows/README.md](workflows/README.md)** - Документация n8n workflow
+- **[WORK_LOG.md](WORK_LOG.md)** - История разработки
+- **[.credentials/TOKENS.md](.credentials/TOKENS.md)** - API ключи (не в git)
+
+## 🏗️ Технологии
 
 - **Telegram Bot API** - основа бота
-- **n8n** - автоматизация и обработка workflows
-- **Python** (планируется)
-- **Node.js** (планируется)
+- **n8n** - оркестрация workflow
+- **Google Gemini** - основная языковая модель
+- **OpenAI/OpenRouter** - Whisper, GPT-4o-mini, embeddings
+- **Supabase** - векторная база знаний
+- **PostgreSQL** - память разговоров
+- **Cohere** - reranking результатов
+- **Google Custom Search** - веб-поиск
+- **ConvertAPI** - конвертация документов
 
-## Структура проекта
+## 📁 Структура проекта
 
 ```
 Jarvis-assistant/
-├── .credentials/          # Токены и секреты (не в git)
-├── workflows/             # n8n workflows (будет добавлено)
-├── src/                   # Исходный код (будет добавлено)
-├── docs/                  # Документация (будет добавлено)
-├── .gitignore            # Исключения git
-├── WORK_LOG.md           # Лог работы над проектом
-└── README.md             # Этот файл
+├── .credentials/              # Токены и API ключи (не в git)
+│   └── TOKENS.md             # Все credentials проекта
+├── workflows/                 # n8n workflows
+│   ├── paraplexity-3.0.json  # Основной workflow
+│   └── README.md             # Документация workflow
+├── .gitignore                # Исключения git
+├── README.md                 # Этот файл
+├── QUICK_START.md            # Быстрый старт
+├── SETUP_CHECKLIST.md        # Полный чек-лист
+└── WORK_LOG.md               # История разработки
 ```
 
-## Установка
+## 🎯 Архитектура
 
-> Инструкции будут добавлены после завершения разработки
+```
+Пользователь (Telegram)
+    ↓
+Telegram Bot API
+    ↓
+n8n Workflow
+    ├─→ Обработка текста → AI Agent
+    ├─→ Whisper API → Транскрипция → AI Agent
+    ├─→ GPT-4o-mini → Анализ изображения → AI Agent
+    └─→ Extract & Parse → Документы → AI Agent
+         ↓
+    AI Agent (Google Gemini)
+         ├─→ Supabase Vector Store (RAG)
+         ├─→ Google Custom Search (Веб)
+         ├─→ PostgreSQL (Память)
+         └─→ Cohere (Reranking)
+         ↓
+    Ответ пользователю
+```
 
-## Настройка
+## 🔧 Требования
 
-1. Получите токен бота от [@BotFather](https://t.me/BotFather)
-2. Настройте n8n workflows
-3. Добавьте токены в `.credentials/TOKENS.md`
-4. Запустите бота
+### Обязательные (для базовой работы):
+- n8n instance (https://n8n.kir-ito.ru/)
+- Telegram Bot Token ✅
+- Google Gemini API ⚠️
+- Supabase account ⚠️
 
-## Безопасность
+### Опциональные (для полной функциональности):
+- OpenAI/OpenRouter API (голос, изображения)
+- PostgreSQL (память разговоров)
+- Google Drive API (загрузка базы знаний)
+- Cohere API (улучшение поиска)
 
-⚠️ **Важно:** Никогда не коммитьте файлы из папки `.credentials/` в репозиторий!
+## 🔐 Безопасность
 
-## Разработка
+⚠️ **ВАЖНО:**
+- Никогда не коммитьте файлы из `.credentials/` в git
+- Не публикуйте API ключи
+- Регулярно ротируйте токены
+- GitHub PAT истекает 09.12.2025 - обновите заранее
 
-Подробный лог разработки ведется в файле [WORK_LOG.md](WORK_LOG.md)
+## 📊 Статус проекта
+
+✅ **Workflow создан и задокументирован**
+⚠️ **Требуется проверка credentials**
+🔄 **В процессе тестирования**
+
+**Прогресс:** Смотрите [WORK_LOG.md](WORK_LOG.md)
 
 ## Автор
 
