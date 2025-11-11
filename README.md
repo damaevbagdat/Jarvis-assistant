@@ -130,10 +130,12 @@ n8n Workflow
 - **ConvertAPI** - невалидный ключ для Word документов
 
 ### 🔧 Исправление проблем:
-📖 Смотрите подробное руководство: **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)**
 
-**Полные результаты тестирования:** [TEST_RESULTS.md](TEST_RESULTS.md)
-**История разработки:** [WORK_LOG.md](WORK_LOG.md)
+**🚀 Пошаговая инструкция (начни отсюда!):** [FIX_STEP_BY_STEP.md](FIX_STEP_BY_STEP.md)
+
+📖 Подробное руководство: [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+📊 Результаты тестирования: [TEST_RESULTS.md](TEST_RESULTS.md)
+📝 История разработки: [WORK_LOG.md](WORK_LOG.md)
 
 ## Автор
 
