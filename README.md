@@ -131,7 +131,9 @@ n8n Workflow
 
 ### 🔧 Исправление проблем:
 
-**🚀 Пошаговая инструкция (начни отсюда!):** [FIX_STEP_BY_STEP.md](FIX_STEP_BY_STEP.md)
+**⚡ САМОЕ БЫСТРОЕ (5 минут, готовые параметры):** [FINAL_FIX.md](FINAL_FIX.md)
+**🚀 Подробная инструкция (25 минут):** [FIX_STEP_BY_STEP.md](FIX_STEP_BY_STEP.md)
+**💨 Экспресс-вариант (2 минуты):** [QUICK_FIX.md](QUICK_FIX.md)
 
 📖 Подробное руководство: [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 📊 Результаты тестирования: [TEST_RESULTS.md](TEST_RESULTS.md)
@@ -148,4 +150,4 @@ n8n Workflow
 ---
 
 **Создано:** 2025-11-10
-**Обновлено:** 2025-11-10
+**Обновлено:** 2025-11-12
